@@ -12,9 +12,7 @@ The plot above is a 30 second simulated drive with four injected faults. The too
 
 Validation engineers spend a lot of time on the same chain of steps: record raw bus traffic, decode it into physical signals, check the signals against rules, and write up what went wrong. I wanted to build that whole chain once, end to end, with tests, so I could see where the tricky parts are. Bit-level decoding and deciding what counts as a "fault" turned out to be the interesting bits.
 
-I have not worked with a real vehicle bus or with BMW tooling. The goal here was to learn the problem space and to show how I structure and test tools like this.
 
-## What it does
 
 1. **Signal database** (`config/vehicle_signals.json`): messages and signals with start bit, length, factor, offset, signedness, unit and valid range. It is a small JSON format in the spirit of a DBC file.
 2. **Decoding** (`ee_toolkit/signals.py`): encodes and decodes CAN frames for little-endian (Intel) layouts, including sub-byte signals like a 4-bit counter.
