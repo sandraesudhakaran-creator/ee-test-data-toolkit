@@ -1,0 +1,20 @@
+{
+  "messages": [
+    {
+      "id": "0x100", "name": "Powertrain", "dlc": 5, "cycle_time_ms": 20,
+      "signals": [
+        {"name": "VehSpeed", "start_bit": 0, "length": 16, "factor": 0.01, "unit": "km/h", "minimum": 0, "maximum": 250},
+        {"name": "EngineRpm", "start_bit": 16, "length": 16, "factor": 0.25, "unit": "rpm", "minimum": 0, "maximum": 7000},
+        {"name": "AliveCounter", "start_bit": 32, "length": 4}
+      ]
+    },
+    {
+      "id": "0x200", "name": "Battery", "dlc": 5, "cycle_time_ms": 100,
+      "signals": [
+        {"name": "BattVoltage", "start_bit": 0, "length": 16, "factor": 0.001, "unit": "V", "minimum": 9.0, "maximum": 16.0},
+        {"name": "BattCurrent", "start_bit": 16, "length": 16, "factor": 0.1, "signed": true, "unit": "A", "minimum": -200, "maximum": 200},
+        {"name": "BattTemp", "start_bit": 32, "length": 8, "factor": 1.0, "offset": -40, "unit": "degC", "minimum": -30, "maximum": 85}
+      ]
+    }
+  ]
+}
